@@ -1,0 +1,495 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>BBC Puzzle for Today 314 Upside-Down Numbers</title>
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/ntnuerc.css">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <script src="https://daybrush.com/scenejs/release/latest/dist/scene.min.js"></script>
+		
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+        <script src="js/ntnu.js"></script>
+    </head>
+    <body>
+        <div class="reveal">
+        <div class="slides">
+            
+<section id="slide_00002_frag_00001" data-state="slide_00002_frag_00001">
+
+
+<!-- Header -->
+  
+
+<!-- Background -->
+
+
+<!-- Slide -->
+<div class="jb-slide">
+
+<div class="jb-output-code jb-render">
+
+<!-- start embedded style -->
+
+<!-- end embedded style -->
+<div class="jb-output jb-render">
+<div class="document" id="bbc-puzzle-for-today-314-upside-down-numbers">
+<h1 class="title">BBC Puzzle for Today 314 Upside-Down Numbers</h1>
+<p>Jacky Baltes</p>
+<p>&lt;<a class="reference external" href="mailto:jacky.baltes&#64;ntnu.edu.tw">jacky.baltes&#64;ntnu.edu.tw</a>&gt;</p>
+<p>15 October 2020</p>
+</div>
+
+</div><!-- end of jb-output jb-render -->
+</div><!-- end of jb-output-code jb-render -->
+
+
+</div>
+<!-- Footer -->
+
+<div class="jb-footer-left plain">
+    <span id="id-dd0a778e-598d-48d5-abe2-fe8fb149b09a" ><span id="id-dd0a778e-598d-48d5-abe2-fe8fb149b09a"><img id="img-id-dd0a778e-598d-48d5-abe2-fe8fb149b09a"     src="assets/images/logo.png"/></span>
+</span>
+
+</div>
+<div class="jb-footer-right plain">
+    <span id="id-b2686add-a386-46af-bdc4-eab7346aa32e" ><span id="id-b2686add-a386-46af-bdc4-eab7346aa32e"><img id="img-id-b2686add-a386-46af-bdc4-eab7346aa32e" width="162" height="138"   src="assets/images/robbi.png"/></span>
+</span>
+
+</div>
+
+<aside class="notes">
+
+</aside>
+
+
+
+</section>
+<section id="slide_00003_frag_00001" data-state="slide_00003_frag_00001">
+
+
+<!-- Header -->
+  
+
+<!-- Background -->
+
+
+<!-- Slide -->
+<div class="jb-slide">
+
+<div class="jb-output-code jb-render">
+
+<!-- start embedded style -->
+
+<!-- end embedded style -->
+<div class="jb-output jb-render">
+
+<h1>BBC Puzzle for Today #314 - Upside-Down Numbers</h1>
+
+<div class="jb-text">
+<ul>
+<li>This programming exercise asks you to write a program to solve the <a href="https://www.bbc.co.uk/programmes/articles/5Sbd21MvhWsQmNjzvSrmslt/puzzle-for-today">BBC Puzzle for Today #314 - Upside-Down Numbers</a></li>
+
+<blockquote>
+Today I noticed that the odometer on my car showed 59865 miles, which reads the same whether I look at it the right way up or upside down. 
+I bought the car second-hand with thirty thousand miles on the clock. How many times since then has this occurred?
+
+Today’s #PuzzleForToday is from the University of Cambridge’s NRICH project (nrich.maths.org).
+</blockquote>
+
+</ul>
+
+</div>
+</div><!-- end of jb-output jb-render -->
+</div><!-- end of jb-output-code jb-render -->
+
+
+</div>
+<!-- Footer -->
+
+<div class="jb-footer-left plain">
+    <span id="id-0d5fb256-2f45-43dc-bc11-4b4d8ca3731d" ><span id="id-0d5fb256-2f45-43dc-bc11-4b4d8ca3731d"><img id="img-id-0d5fb256-2f45-43dc-bc11-4b4d8ca3731d"     src="assets/images/logo.png"/></span>
+</span>
+
+</div>
+<div class="jb-footer-right plain">
+    <span id="id-70aea1d8-3085-43ef-8a7b-136502569ac9" ><span id="id-70aea1d8-3085-43ef-8a7b-136502569ac9"><img id="img-id-70aea1d8-3085-43ef-8a7b-136502569ac9" width="162" height="138"   src="assets/images/robbi.png"/></span>
+</span>
+
+</div>
+
+<aside class="notes">
+
+</aside>
+
+
+
+</section>
+<section id="slide_00004_frag_00001" data-state="slide_00004_frag_00001">
+
+
+<!-- Header -->
+  
+
+<!-- Background -->
+
+
+<!-- Slide -->
+<div class="jb-slide">
+<div class="jb-input jb-render jb-code" style="text-align:center">
+
+<!-- start embedded style -->
+
+<!-- end embedded style -->
+<div class="jb-input-code jb-render">
+<div class="highlight" style="background: #f8f8f8; color:#101010;display=inline-block;"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">is_reversible_digit</span>(d):
+  <span style="color: #008000; font-weight: bold">if</span> d <span style="color: #666666">==</span> <span style="color: #666666">0</span>:
+    rev <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">True</span>
+  <span style="color: #008000; font-weight: bold">elif</span> d <span style="color: #666666">==</span> <span style="color: #666666">1</span>:
+    rev <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">True</span>
+  <span style="color: #008000; font-weight: bold">elif</span> d <span style="color: #666666">==</span> <span style="color: #666666">2</span>:
+    rev <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">True</span>
+  <span style="color: #008000; font-weight: bold">elif</span> d <span style="color: #666666">==</span> <span style="color: #666666">5</span>:
+    rev <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">True</span>
+  <span style="color: #008000; font-weight: bold">elif</span> d <span style="color: #666666">==</span> <span style="color: #666666">6</span>:
+    rev <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">True</span>
+  <span style="color: #008000; font-weight: bold">elif</span> d <span style="color: #666666">==</span> <span style="color: #666666">8</span>:
+    rev <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">True</span>
+  <span style="color: #008000; font-weight: bold">elif</span> d <span style="color: #666666">==</span> <span style="color: #666666">9</span>:
+    rev <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">True</span>
+  <span style="color: #008000; font-weight: bold">else</span>:
+    rev <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">False</span>
+  <span style="color: #008000; font-weight: bold">return</span> rev
+</pre></div>
+
+</div><!-- end of jb-input-code jb-render -->
+
+</div>
+
+</div>
+<!-- Footer -->
+
+<div class="jb-footer-left plain">
+    <span id="id-00167317-3dc9-49b6-9d5f-9fd56ad80d2f" ><span id="id-00167317-3dc9-49b6-9d5f-9fd56ad80d2f"><img id="img-id-00167317-3dc9-49b6-9d5f-9fd56ad80d2f"     src="assets/images/logo.png"/></span>
+</span>
+
+</div>
+<div class="jb-footer-right plain">
+    <span id="id-368e64c8-a3ca-44ad-8c02-d30dc1cbb0a1" ><span id="id-368e64c8-a3ca-44ad-8c02-d30dc1cbb0a1"><img id="img-id-368e64c8-a3ca-44ad-8c02-d30dc1cbb0a1" width="162" height="138"   src="assets/images/robbi.png"/></span>
+</span>
+
+</div>
+
+<aside class="notes">
+
+</aside>
+
+
+
+</section>
+<section id="slide_00005_frag_00001" data-state="slide_00005_frag_00001">
+
+
+<!-- Header -->
+  
+
+<!-- Background -->
+
+
+<!-- Slide -->
+<div class="jb-slide">
+<div class="jb-input jb-render jb-code" style="text-align:center">
+
+<!-- start embedded style -->
+
+<!-- end embedded style -->
+<div class="jb-input-code jb-render">
+<div style="font-size:0.5em"><!-- start of style="font-size:0.5em" -->
+<div class="highlight" style="background: #f8f8f8; color:#101010;display=inline-block;"><pre style="line-height: 125%"><span></span>start <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+end <span style="color: #666666">=</span> <span style="color: #666666">10000000</span>
+
+count_reversible_and_same <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+count_reversible <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">is_reversible_and_same</span>( inum):
+  <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;</span>
+<span style="color: #BA2121; font-style: italic">  returns 0 if number is not reversible, 1 if reversible and not same, or 2 if reversible and same</span>
+<span style="color: #BA2121; font-style: italic">  &quot;&quot;&quot;</span>
+  <span style="color: #408080; font-style: italic"># Version 1</span>
+  <span style="color: #408080; font-style: italic"># digits = [ ord(s) - ord(&#39;0&#39;) for s in str(num) ]</span>
+  
+  num <span style="color: #666666">=</span> inum
+  <span style="color: #408080; font-style: italic"># Version 2</span>
+  digits <span style="color: #666666">=</span> []
+  <span style="color: #008000; font-weight: bold">while</span>( num <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span> ):
+    d <span style="color: #666666">=</span> num <span style="color: #666666">%</span> <span style="color: #666666">10</span>
+    <span style="color: #408080; font-style: italic">#digits = [ d ] + digits</span>
+    digits<span style="color: #666666">.</span>append(d)
+    num <span style="color: #666666">=</span> num <span style="color: #666666">//</span> <span style="color: #666666">10</span>
+
+  digit_map <span style="color: #666666">=</span> { <span style="color: #666666">0</span>: <span style="color: #666666">0</span>, <span style="color: #666666">1</span>:<span style="color: #666666">1</span>, <span style="color: #666666">2</span>:<span style="color: #666666">2</span>, <span style="color: #666666">5</span>:<span style="color: #666666">5</span>, <span style="color: #666666">6</span>:<span style="color: #666666">9</span>, <span style="color: #666666">8</span>:<span style="color: #666666">8</span>, <span style="color: #666666">9</span>:<span style="color: #666666">6</span> }
+
+  reversible <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+
+  val_reversed_num <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+
+  <span style="color: #008000; font-weight: bold">for</span> d <span style="color: #AA22FF; font-weight: bold">in</span> digits:
+    <span style="color: #008000; font-weight: bold">if</span> d <span style="color: #AA22FF; font-weight: bold">in</span> digit_map:
+      val_reversed_num <span style="color: #666666">=</span> val_reversed_num <span style="color: #666666">*</span> <span style="color: #666666">10</span> <span style="color: #666666">+</span> digit_map[d]
+    <span style="color: #008000; font-weight: bold">else</span>:
+      reversible <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+      <span style="color: #008000; font-weight: bold">break</span>
+
+  <span style="color: #008000; font-weight: bold">if</span> reversible <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span>:
+    <span style="color: #008000; font-weight: bold">if</span> inum <span style="color: #666666">==</span> val_reversed_num:
+      reversible <span style="color: #666666">=</span> <span style="color: #666666">2</span>
+
+  <span style="color: #408080; font-style: italic">#print(&#39;check&#39;, inum, digits, reversible, val_reversed_num)</span>
+  <span style="color: #008000; font-weight: bold">return</span> reversible
+
+<span style="color: #008000; font-weight: bold">for</span> num <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(start, end<span style="color: #666666">+1</span>):
+  chk <span style="color: #666666">=</span> is_reversible_and_same(num)
+  <span style="color: #008000; font-weight: bold">if</span> chk <span style="color: #666666">&gt;=</span> <span style="color: #666666">2</span>:
+    count_reversible_and_same <span style="color: #666666">=</span> count_reversible_and_same <span style="color: #666666">+</span> <span style="color: #666666">1</span>
+  <span style="color: #008000; font-weight: bold">if</span> chk <span style="color: #666666">&gt;=</span> <span style="color: #666666">1</span>:
+    count_reversible <span style="color: #666666">=</span> count_reversible <span style="color: #666666">+</span> <span style="color: #666666">1</span>
+
+<span style="color: #008000">print</span>( <span style="color: #BA2121">&#39;Reversible numbers&#39;</span>, count_reversible, <span style="color: #BA2121">&#39;and same&#39;</span>, count_reversible_and_same )
+</pre></div>
+
+</div><!-- end of style="font-size:0.5em" -->
+</div><!-- end of jb-input-code jb-render -->
+
+</div>
+<div class="jb-print jb-render">
+<div style="font-size:0.5em"><!-- start of style="font-size:0.5em" -->
+<div class="jb-output jb-render code" style="text-align:center">
+<div class="jb-stdout code" style="display:inline-block; width:90%">
+<pre style="font-size:0.5em">
+Reversible numbers 823543 and same 2056
+</pre>
+</div>
+</div>
+
+</div><!-- end of style="font-size:0.5em" -->
+</div><!-- end of jb-print jb-render -->
+
+</div>
+<!-- Footer -->
+
+<div class="jb-footer-left plain">
+    <span id="id-26234a20-98f2-40db-bfd1-21aac8f2d429" ><span id="id-26234a20-98f2-40db-bfd1-21aac8f2d429"><img id="img-id-26234a20-98f2-40db-bfd1-21aac8f2d429"     src="assets/images/logo.png"/></span>
+</span>
+
+</div>
+<div class="jb-footer-right plain">
+    <span id="id-0b4e6622-fbea-4c75-adf7-3c553aa7191d" ><span id="id-0b4e6622-fbea-4c75-adf7-3c553aa7191d"><img id="img-id-0b4e6622-fbea-4c75-adf7-3c553aa7191d" width="162" height="138"   src="assets/images/robbi.png"/></span>
+</span>
+
+</div>
+
+<aside class="notes">
+
+</aside>
+
+
+
+</section>
+<section id="slide_00006_frag_00001" data-state="slide_00006_frag_00001">
+
+
+<!-- Header -->
+  
+
+<!-- Background -->
+
+
+<!-- Slide -->
+<div class="jb-slide">
+<div class="jb-input jb-render jb-code" style="text-align:center">
+
+<!-- start embedded style -->
+
+<!-- end embedded style -->
+<div class="jb-input-code jb-render">
+<div class="highlight" style="background: #f8f8f8; color:#101010;display=inline-block;"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+
+rev_nums <span style="color: #666666">=</span> []
+rev_nums_same <span style="color: #666666">=</span> []
+
+start <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+end <span style="color: #666666">=</span> <span style="color: #666666">1000000</span>
+
+<span style="color: #008000; font-weight: bold">for</span> num <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(start, end<span style="color: #666666">+1</span>):
+  chk <span style="color: #666666">=</span> is_reversible_and_same(num)
+  <span style="color: #008000; font-weight: bold">if</span> chk <span style="color: #666666">&gt;=</span> <span style="color: #666666">2</span>:
+    rev_nums_same<span style="color: #666666">.</span>append(num)
+  <span style="color: #008000; font-weight: bold">if</span> chk <span style="color: #666666">&gt;=</span> <span style="color: #666666">1</span>:
+    rev_nums<span style="color: #666666">.</span>append(num)
+
+fig <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>figure(dpi<span style="color: #666666">=200</span>)
+ax <span style="color: #666666">=</span> fig<span style="color: #666666">.</span>add_subplot(<span style="color: #666666">1</span>,<span style="color: #666666">1</span>,<span style="color: #666666">1</span>)
+
+ax<span style="color: #666666">.</span>scatter(rev_nums, rev_nums, <span style="color: #666666">1</span>, color<span style="color: #666666">=</span><span style="color: #BA2121">&#39;blue&#39;</span>)
+ax<span style="color: #666666">.</span>scatter(rev_nums_same, rev_nums_same, <span style="color: #666666">0.1</span>, color<span style="color: #666666">=</span><span style="color: #BA2121">&#39;#ff4040&#39;</span>)
+
+
+f1 <span style="color: #666666">=</span> addJBFigure(<span style="color: #BA2121">&quot;f1&quot;</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>, fig )
+plt<span style="color: #666666">.</span>close()
+</pre></div>
+
+</div><!-- end of jb-input-code jb-render -->
+
+</div>
+
+</div>
+<!-- Footer -->
+
+<div class="jb-footer-left plain">
+    <span id="id-926be76b-637e-400b-b2af-069314ff210b" ><span id="id-926be76b-637e-400b-b2af-069314ff210b"><img id="img-id-926be76b-637e-400b-b2af-069314ff210b"     src="assets/images/logo.png"/></span>
+</span>
+
+</div>
+<div class="jb-footer-right plain">
+    <span id="id-cf80a85f-6c72-480e-813a-8a39a9fdef33" ><span id="id-cf80a85f-6c72-480e-813a-8a39a9fdef33"><img id="img-id-cf80a85f-6c72-480e-813a-8a39a9fdef33" width="162" height="138"   src="assets/images/robbi.png"/></span>
+</span>
+
+</div>
+
+<aside class="notes">
+
+</aside>
+
+
+
+</section>
+<section id="slide_00007_frag_00001" data-state="slide_00007_frag_00001">
+
+
+<!-- Header -->
+  
+
+<!-- Background -->
+
+
+<!-- Slide -->
+<div class="jb-slide">
+
+<div class="jb-output-code jb-render">
+
+<!-- start embedded style -->
+
+<!-- end embedded style -->
+<div class="jb-output jb-render">
+
+<h1>Density of Reversible and Reversible_and_Same Numbers</h1>
+
+<span id="id-27843360-438d-4f4d-934c-f8c1a6a5e8b4" ><span id="id-27843360-438d-4f4d-934c-f8c1a6a5e8b4"><img id="img-id-27843360-438d-4f4d-934c-f8c1a6a5e8b4"     src="assets/images/f1.svg"/></span>
+</span>
+</div><!-- end of jb-output jb-render -->
+</div><!-- end of jb-output-code jb-render -->
+
+
+</div>
+<!-- Footer -->
+
+<div class="jb-footer-left plain">
+    <span id="id-0c35df86-cfac-4df8-8d8f-74ac9e186c53" ><span id="id-0c35df86-cfac-4df8-8d8f-74ac9e186c53"><img id="img-id-0c35df86-cfac-4df8-8d8f-74ac9e186c53"     src="assets/images/logo.png"/></span>
+</span>
+
+</div>
+<div class="jb-footer-right plain">
+    <span id="id-9b52747e-cc9a-4c19-9321-2cf53c73f6fe" ><span id="id-9b52747e-cc9a-4c19-9321-2cf53c73f6fe"><img id="img-id-9b52747e-cc9a-4c19-9321-2cf53c73f6fe" width="162" height="138"   src="assets/images/robbi.png"/></span>
+</span>
+
+</div>
+
+<aside class="notes">
+
+</aside>
+
+
+
+</section>
+        </div>
+        </div>
+
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info about config & dependencies:
+            // - https://github.com/hakimel/reveal.js#configuration
+            // - https://github.com/hakimel/reveal.js#dependencies
+            Reveal.initialize({
+                math: {
+                    mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+                    config: 'TeX-AMS_HTML-full',  // See http://docs.mathjax.org/en/latest/config-files.html
+                    // tex2jax: {
+                    //     inlineMath: [['$', '$'], ['\(', '\)']],
+                    //     displayMath: [['$$', '$$'], ['\[', '\]']],
+                    //     processEscapes: true,
+                    //     processEnvironments: true,
+                    //     skipTags: ['script', 'noscript', 'style', 'textarea', 'code', 'pre'],
+                    //     displayAlign: 'center',
+                    // }                
+                },
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/math/math.js', async: true }
+                ]
+            });
+        </script>
+
+        <script>
+            <!-- Assets -->
+var assets = {
+"robbi" : new JBImage( "robbi", "12677", "162", "138", null, null, "assets/images/robbi", "png" ),
+"logo" : new JBImage( "logo", "12033", "0", "0", null, null, "assets/images/logo", "png" ),
+"fira-logo-1" : new JBImage( "fira-logo-1", "93836", "0", "0", null, null, "assets/images/FIRA-logo-1", "png" ),
+"pairLogo" : new JBImage( "pairLogo", "63051", "0", "0", null, null, "assets/images/pairLogo", "png" ),
+"f1" : new JBImage( "f1", "12330909", "0", "0", null, null, "assets/images/f1", "svg" ) 
+};
+var assetInstances = {
+    "id-b2686add-a386-46af-bdc4-eab7346aa32e": assets["robbi"],
+    "id-70aea1d8-3085-43ef-8a7b-136502569ac9": assets["robbi"],
+    "id-368e64c8-a3ca-44ad-8c02-d30dc1cbb0a1": assets["robbi"],
+    "id-0b4e6622-fbea-4c75-adf7-3c553aa7191d": assets["robbi"],
+    "id-cf80a85f-6c72-480e-813a-8a39a9fdef33": assets["robbi"],
+    "id-9b52747e-cc9a-4c19-9321-2cf53c73f6fe": assets["robbi"],
+    "id-dd0a778e-598d-48d5-abe2-fe8fb149b09a": assets["logo"],
+    "id-0d5fb256-2f45-43dc-bc11-4b4d8ca3731d": assets["logo"],
+    "id-00167317-3dc9-49b6-9d5f-9fd56ad80d2f": assets["logo"],
+    "id-26234a20-98f2-40db-bfd1-21aac8f2d429": assets["logo"],
+    "id-926be76b-637e-400b-b2af-069314ff210b": assets["logo"],
+    "id-0c35df86-cfac-4df8-8d8f-74ac9e186c53": assets["logo"],
+    "id-27843360-438d-4f4d-934c-f8c1a6a5e8b4": assets["f1"]
+};
+<!-- End of Assets -->
+
+            convertURLs(assetInstances, "smart-path");
+        </script>
+        <script>
+            <!-- Characters -->
+var characters =
+{};
+<!-- End of Characters -->
+
+        </script>
+    </body>
+</html>
